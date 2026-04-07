@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "@catppuccin/tailwindcss/mocha.css";
+
+* {
+  box-sizing: border-box;
+}
+
+button:focus {
+  outline: solid;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+
+  user-select: none;
+  -webkit-app-region: drag;
+}
+
+button,
+input,
+textarea,
+select {
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+}

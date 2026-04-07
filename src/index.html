@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pymoro</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div
+      class="app bg-ctp-crust flex flex-col font-sans h-screen text-center text-shadow-md"
+    >
+      <div id="title" class="font-bold p-2 text-ctp-text text-xl">Pymoro</div>
+      <div
+        id="timer"
+        class="flex flex-1 font-black items-center justify-center text-5xl text-ctp-text"
+      ></div>
+      <div id="control" class="grid grid-cols-2 p-3">
+        <button id="start" onclick="main('start')" class="text-ctp-green">
+          Start
+        </button>
+        <button id="stop" onclick="main('stop')" hidden class="text-ctp-green">
+          Stop
+        </button>
+        <button id="skip" onclick="main('skip')" class="text-ctp-blue">
+          Skip
+        </button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
