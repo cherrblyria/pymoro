@@ -3,32 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <title>Pymoro</title>
-    <link href="./output.css" rel="stylesheet" />
+    <link href="./app.css" rel="stylesheet" />
   </head>
 
   <body>
-    <div class="app bg-gray-900 flex flex-col font-sans gap-2 h-screen p-2">
+    <div class="app gap-2 bg-gray-900 p-2 font-sans flex h-screen flex-col">
       <div class="grid grid-flow-col">
         <div
           id="session"
-          class="absolute bg-gray-600 font-bold justify-self-center px-2 py-1 rounded-full shadow-xl text-[1em] text-gray-50 text-shadow-lg"
+          class="bg-gray-600 px-2 py-1 font-bold text-gray-50 shadow-xl text-shadow-lg absolute justify-self-center rounded-full text-[1em]"
         ></div>
         <div
           id="round"
-          class="bg-gray-600 font-bold justify-self-end px-3 py-1 rounded-full shadow-xl text-[1em] text-gray-50 text-shadow-lg"
+          class="bg-gray-600 px-3 py-1 font-bold text-gray-50 shadow-xl text-shadow-lg justify-self-end rounded-full text-[1em]"
         ></div>
       </div>
 
       <div
         id="timer"
-        class="bg-gray-600 flex flex-1 font-black items-center justify-center rounded-2xl shadow-xl text-[3.1em] text-gray-50 text-shadow-lg"
+        class="rounded-2xl bg-gray-600 font-black text-gray-50 shadow-xl text-shadow-lg flex flex-1 items-center justify-center text-[3.1em]"
       ></div>
 
       <div class="gap-1 grid grid-flow-col justify-items-stretch text-[1.2em]">
         <button
           id="start"
           onclick="main('start')"
-          class="bg-green-300 rounded-full hover:bg-green-200 shadow-xl text-green-900 text-shadow-lg"
+          class="bg-green-300 text-green-900 shadow-xl text-shadow-lg hover:bg-green-200 rounded-full"
         >
           Start
         </button>
@@ -37,7 +37,7 @@
           id="stop"
           onclick="main('stop')"
           hidden
-          class="bg-yellow-300 hover:bg-yellow-200 rounded-full shadow-xl text-shadow-lg text-yellow-900"
+          class="bg-yellow-300 text-yellow-900 shadow-xl text-shadow-lg hover:bg-yellow-200 rounded-full"
         >
           Stop
         </button>
@@ -46,7 +46,7 @@
           id="skip"
           onclick="main('skip')"
           hidden
-          class="bg-blue-300 hover:bg-blue-200 rounded-full shadow-xl text-blue-900 text-shadow-lg"
+          class="bg-blue-300 text-blue-900 shadow-xl text-shadow-lg hover:bg-blue-200 rounded-full"
         >
           Skip
         </button>
@@ -55,7 +55,7 @@
           id="reset"
           onclick="main('reset')"
           hidden
-          class="bg-red-300 hover:bg-red-200 rounded-full shadow-xl text-red-900 text-shadow-lg"
+          class="bg-red-300 text-red-900 shadow-xl text-shadow-lg hover:bg-red-200 rounded-full"
         >
           Reset
         </button>
