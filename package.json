@@ -5,8 +5,9 @@
   "main": "src/main.js",
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.2",
-    "tailwindcss": "^4.2.2"
-    "@catppuccin/tailwindcss": "^1.0.0",
+    "electron-reload": "^2.0.0-alpha.1"
+  },
+  "dependencies": {
     "electron": "^41.1.1"
   },
   "scripts": {
@@ -15,5 +16,13 @@
   "description": "",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cherrblyria/pymoro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cherrblyria/pymoro/issues"
+  },
+  "homepage": "https://github.com/cherrblyria/pymoro#readme"
 }

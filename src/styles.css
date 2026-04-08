@@ -1,12 +1,11 @@
 @import "tailwindcss";
-@import "@catppuccin/tailwindcss/mocha.css";
 
 * {
   box-sizing: border-box;
 }
 
 button:focus {
-  outline: solid;
+  outline: none;
 }
 
 body {
