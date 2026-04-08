@@ -5,7 +5,6 @@
   "main": "src/main.js",
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.2",
-    "tailwindcss": "^4.2.2"
     "@catppuccin/tailwindcss": "^1.0.0",
     "electron": "^41.1.1"
   },
