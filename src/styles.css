@@ -6,7 +6,7 @@
 }
 
 button:focus {
-  outline: solid;
+  outline: none;
 }
 
 body {
