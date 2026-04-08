@@ -7,22 +7,28 @@
   </head>
 
   <body>
-    <div class="app bg-ctp-crust flex flex-col font-sans gap-2 h-screen p-2">
-      <div
-        id="session"
-        class="bg-ctp-surface0 flex font-bold px-6 py-1 rounded-full self-center shadow-xl text-[1em] text-ctp-text text-shadow-lg"
-      ></div>
+    <div class="app bg-gray-900 flex flex-col font-sans gap-2 h-screen p-2">
+      <div class="grid grid-flow-col">
+        <div
+          id="session"
+          class="absolute bg-gray-600 font-bold justify-self-center px-2 py-1 rounded-full shadow-xl text-[1em] text-gray-50 text-shadow-lg"
+        ></div>
+        <div
+          id="round"
+          class="bg-gray-600 font-bold justify-self-end px-3 py-1 rounded-full shadow-xl text-[1em] text-gray-50 text-shadow-lg"
+        ></div>
+      </div>
 
       <div
         id="timer"
-        class="bg-ctp-surface0 flex flex-1 font-black items-center justify-center rounded-2xl shadow-xl text-[3.1em] text-ctp-text text-shadow-lg"
+        class="bg-gray-600 flex flex-1 font-black items-center justify-center rounded-2xl shadow-xl text-[3.1em] text-gray-50 text-shadow-lg"
       ></div>
 
-      <div id="control" class="gap-1 grid grid-cols-3 text-[1.2em]">
+      <div class="gap-1 grid grid-flow-col justify-items-stretch text-[1.2em]">
         <button
           id="start"
           onclick="main('start')"
-          class="bg-ctp-green rounded-full shadow-xl text-shadow-lg"
+          class="bg-green-300 rounded-full hover:bg-green-200 shadow-xl text-green-900 text-shadow-lg"
         >
           Start
         </button>
@@ -31,7 +37,7 @@
           id="stop"
           onclick="main('stop')"
           hidden
-          class="bg-ctp-yellow rounded-full shadow-xl text-shadow-lg"
+          class="bg-yellow-300 hover:bg-yellow-200 rounded-full shadow-xl text-shadow-lg text-yellow-900"
         >
           Stop
         </button>
@@ -39,7 +45,8 @@
         <button
           id="skip"
           onclick="main('skip')"
-          class="bg-ctp-blue rounded-full shadow-xl text-shadow-lg"
+          hidden
+          class="bg-blue-300 hover:bg-blue-200 rounded-full shadow-xl text-blue-900 text-shadow-lg"
         >
           Skip
         </button>
@@ -47,12 +54,17 @@
         <button
           id="reset"
           onclick="main('reset')"
-          class="bg-ctp-red rounded-full shadow-xl text-shadow-lg"
+          hidden
+          class="bg-red-300 hover:bg-red-200 rounded-full shadow-xl text-red-900 text-shadow-lg"
         >
           Reset
         </button>
       </div>
     </div>
+
+    <audio id="notif">
+      <source src="../assets/notif.mp3" type="audio/mpeg" />
+    </audio>
 
     <script src="./script.js"></script>
   </body>
