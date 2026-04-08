@@ -4,9 +4,10 @@ const formatTime = (seconds) => {
   return `${minutes.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
 };
 
-function showNotification(title, body) {
+const showNotification = (title, body) => {
+  document.getElementById("notif").play();
   new Notification(title, { body: body });
-}
+};
 
 var focusTime = 1500; // 25 mins
 var breakTime = 300; // 5 mins
@@ -17,12 +18,11 @@ var isStop = false;
 
 const timerText = document.getElementById("timer");
 const sessionText = document.getElementById("session");
+const roundText = document.getElementById("round");
 const startBTN = document.getElementById("start");
 const stopBTN = document.getElementById("stop");
 const skipBTN = document.getElementById("skip");
 const resetBTN = document.getElementById("reset");
-
-timerText.textContent = formatTime(focusTime);
 
 var timeLeft, timerInterval;
 
@@ -41,7 +41,13 @@ const getCurrentSession = () => {
   return session[currentSession];
 };
 
-sessionText.textContent = getCurrentSession();
+function updateText() {
+  sessionText.textContent = getCurrentSession();
+  roundText.textContent = round.toString();
+  timerText.textContent = formatTime(timeLeft);
+}
+updateText();
+timerText.textContent = formatTime(focusTime);
 
 const advancePhase = () => {
   if (!isBreak) {
@@ -51,26 +57,23 @@ const advancePhase = () => {
 
     if (round < 4) {
       timeLeft = breakTime;
-      timer.textContent = formatTime(timeLeft);
 
+      updateText();
       showNotification("Pymoro", "Break");
-      sessionText.textContent = getCurrentSession();
       console.log("break session");
     } else {
       timeLeft = longBreakTime;
-      timer.textContent = formatTime(timeLeft);
 
+      updateText();
       showNotification("Pymoro", "Long Break");
-      sessionText.textContent = getCurrentSession();
       console.log("long break session");
     }
   } else {
     isBreak = false;
     timeLeft = focusTime;
-    timer.textContent = formatTime(timeLeft);
 
+    updateText();
     showNotification("Pymoro", "Focus");
-    sessionText.textContent = getCurrentSession();
     console.log("focus session");
 
     if (round == 4) {
@@ -78,12 +81,14 @@ const advancePhase = () => {
       console.log("reseted round");
     }
   }
-  timer.textContent = formatTime(timeLeft);
+  updateText();
 };
 
 const main = (action) => {
   switch (action) {
     case "start": // send by startBTN
+      resetBTN.hidden = true;
+      skipBTN.hidden = true;
       startBTN.hidden = true;
       stopBTN.hidden = false;
 
@@ -91,13 +96,14 @@ const main = (action) => {
         timeLeft = focusTime;
         console.log("started");
       } else {
+        startBTN.textContent = "Start";
         console.log("resumed");
       }
       isStop = false;
 
       timerInterval = setInterval(() => {
         timeLeft--;
-        timer.textContent = formatTime(timeLeft);
+        updateText();
 
         if (timeLeft < 0) {
           advancePhase();
@@ -108,18 +114,26 @@ const main = (action) => {
     case "stop": // send by stopBTN
       clearInterval(timerInterval);
       console.log("stoped");
-
       isStop = true;
-      stopBTN.hidden = true;
+
+      resetBTN.hidden = false;
+      skipBTN.hidden = false;
       startBTN.hidden = false;
+      stopBTN.hidden = true;
+
+      startBTN.textContent = "Resume";
 
       break;
     case "skip": // send by skipBTN
       clearInterval(timerInterval);
-
       isStop = true;
-      stopBTN.hidden = true;
+
+      resetBTN.hidden = true;
+      skipBTN.hidden = true;
       startBTN.hidden = false;
+      stopBTN.hidden = true;
+
+      startBTN.textContent = "Start";
 
       advancePhase();
       console.log("skipped");
@@ -127,18 +141,20 @@ const main = (action) => {
       break;
     case "reset": // send by reset
       clearInterval(timerInterval);
+      timeLeft = focusTime;
 
-      isStop = false;
       stopBTN.hidden = true;
+      skipBTN.hidden = true;
+      resetBTN.hidden = true;
       startBTN.hidden = false;
+
+      startBTN.textContent = "Start";
 
       round = 0;
       isBreak = false;
       isStop = false;
-      timerText.textContent = formatTime(focusTime);
 
-      showNotification("Pymoro", "Reseted Session");
-      sessionText.textContent = getCurrentSession();
+      updateText();
       console.log("reseted session");
 
       break;

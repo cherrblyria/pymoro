@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "@catppuccin/tailwindcss/mocha.css";
 
 * {
   box-sizing: border-box;
