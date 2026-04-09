@@ -12,6 +12,7 @@ const showNotification = (title, body) => {
 var focusTime = 1500; // 25 mins
 var breakTime = 300; // 5 mins
 var longBreakTime = 900; // 15 mins
+var loopRound = 0;
 var round = 0;
 var isBreak = false;
 var isStop = false;
@@ -32,7 +33,7 @@ const getCurrentSession = () => {
 
   if (!isBreak) {
     currentSession = 0;
-  } else if (round < 4) {
+  } else if (loopRound < 4) {
     currentSession = 1;
   } else {
     currentSession = 2;
@@ -52,10 +53,12 @@ timerText.textContent = formatTime(focusTime);
 const advancePhase = () => {
   if (!isBreak) {
     isBreak = true;
+    loopRound += 1;
     round += 1;
+    console.log(loopRound);
     console.log(round);
 
-    if (round < 4) {
+    if (loopRound < 4) {
       timeLeft = breakTime;
 
       updateText();
@@ -76,8 +79,8 @@ const advancePhase = () => {
     showNotification("Pymoro", "Focus");
     console.log("focus session");
 
-    if (round == 4) {
-      round = 0;
+    if (loopRound == 4) {
+      loopRound = 0;
       console.log("reseted round");
     }
   }
@@ -150,6 +153,7 @@ const main = (action) => {
 
       startBTN.textContent = "Start";
 
+      loopRound = 0;
       round = 0;
       isBreak = false;
       isStop = false;

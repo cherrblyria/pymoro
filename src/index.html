@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <title>Pymoro</title>
     <link href="./app.css" rel="stylesheet" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
   </head>
 
   <body>
-    <div class="app gap-2 bg-gray-900 p-2 font-sans flex h-screen flex-col">
+    <div
+      class="app gap-2 bg-gray-900 p-2 font-sans flex h-screen flex-col tabular-nums"
+    >
       <div class="grid grid-flow-col">
         <div
           id="session"
@@ -24,11 +30,11 @@
         class="rounded-2xl bg-gray-600 font-black text-gray-50 shadow-xl text-shadow-lg flex flex-1 items-center justify-center text-[3.1em]"
       ></div>
 
-      <div class="gap-1 grid grid-flow-col justify-items-stretch text-[1.2em]">
+      <div class="gap-2 grid grid-flow-col justify-items-stretch text-[1.2em]">
         <button
           id="start"
           onclick="main('start')"
-          class="bg-green-300 text-green-900 shadow-xl text-shadow-lg hover:bg-green-200 rounded-full"
+          class="ease-in-out bg-green-300 hover:text-green-700 text-green-900 shadow-xl text-shadow-lg hover:bg-green-200 rounded-full transition duration-300"
         >
           Start
         </button>
@@ -37,7 +43,7 @@
           id="stop"
           onclick="main('stop')"
           hidden
-          class="bg-yellow-300 text-yellow-900 shadow-xl text-shadow-lg hover:bg-yellow-200 rounded-full"
+          class="ease-in-out bg-yellow-200 hover:text-yellow-700 text-yellow-900 shadow-xl text-shadow-lg hover:bg-yellow-100 rounded-full transition duration-300"
         >
           Stop
         </button>
@@ -46,7 +52,7 @@
           id="skip"
           onclick="main('skip')"
           hidden
-          class="bg-blue-300 text-blue-900 shadow-xl text-shadow-lg hover:bg-blue-200 rounded-full"
+          class="ease-in-out bg-blue-300 hover:text-blue-700 text-blue-900 shadow-xl text-shadow-lg hover:bg-blue-200 rounded-full transition duration-300"
         >
           Skip
         </button>
@@ -55,7 +61,7 @@
           id="reset"
           onclick="main('reset')"
           hidden
-          class="bg-red-300 text-red-900 shadow-xl text-shadow-lg hover:bg-red-200 rounded-full"
+          class="ease-in-out bg-red-300 hover:text-red-700 text-red-900 shadow-xl text-shadow-lg hover:bg-red-200 rounded-full transition duration-300"
         >
           Reset
         </button>

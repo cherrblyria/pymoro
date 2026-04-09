@@ -12,12 +12,11 @@ function createWindow() {
     frame: false,
     webPreferences: {
       contextIsolation: true,
-      devTools: true,
+      devTools: false,
     },
   });
 
   win.loadFile("src/index.html");
-  // win.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow);
