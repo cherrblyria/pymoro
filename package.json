@@ -17,7 +17,19 @@
   },
   "build": {
     "appId": "com.pymoro.app",
-    "productName": "Pymoro"
+    "productName": "Pymoro",
+    "win": {
+      "icon": "assets/icons/icon.ico"
+    },
+    "mac": {
+      "icon": "assets/icons/icon.icns"
+    },
+    "linux": {
+      "icon": "assets/icons/512x512.png",
+      "target": [
+        "AppImage"
+      ]
+    }
   },
   "description": "",
   "keywords": [],
