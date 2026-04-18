@@ -1,15 +1,15 @@
-# Pymoro
+# 🍅 Pymoro
 
 A minimal Pomodoro timer desktop application built with Electron and Tailwind CSS.
 
-## Features
+## ✨ Features
 
 - **Pomodoro Timer**: Focus sessions (25 min), short breaks (5 min), and long breaks (15 min)
 - **Smart Cycling**: Automatically cycles through 4 focus sessions before triggering a long break
 - **Desktop Notifications**: System notifications with audio alerts when sessions change
 - **Cross-Platform**: Builds for Windows, macOS, and Linux
 
-## Installation
+## 📦 Installation
 
 1. Clone the repository:
    ```bash
@@ -35,13 +35,13 @@ A minimal Pomodoro timer desktop application built with Electron and Tailwind CS
 
 The built executable will be in the `dist` folder.
 
-## Development
+## ⚒️ Development
 
 Run the app in development mode:
 ```bash
 npm start
 ```
 
-## License
+## 📜 License
 
 MIT
