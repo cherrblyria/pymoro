@@ -39,7 +39,7 @@ The built executable will be in the `dist` folder.
 
 Run the app in development mode:
 ```bash
-npm start
+npm run start
 ```
 
 ## 📜 License
