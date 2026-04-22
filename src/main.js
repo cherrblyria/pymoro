@@ -10,6 +10,7 @@ function createWindow() {
     maximizable: false,
     fullscreenable: false,
     frame: false,
+    icon: "assets/icons/icon.ico",
     webPreferences: {
       contextIsolation: true,
       devTools: false,
