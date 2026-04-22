@@ -31,9 +31,13 @@
       ]
     }
   },
-  "description": "",
-  "keywords": [],
-  "author": "",
+  "description": "Pomodoro timer application",
+  "keywords": [
+    "pomodoro",
+    "timer",
+    "productivity"
+  ],
+  "author": "Cherrblyria",
   "license": "ISC",
   "repository": {
     "type": "git",
