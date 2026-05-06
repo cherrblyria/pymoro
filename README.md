@@ -11,15 +11,15 @@ A minimal Pomodoro timer desktop application built with Electron and Tailwind CS
 
 ## 📦 Installation
 
-You can download the installer for Windows from [latest release](https://codeberg.org/cherrblyria/pymoro/releases/latest).
+You can download the installer for Windows from [latest release](https://github.com/cherrblyria/pymoro/releases/latest).
 
-*MacOS & Linux soon.*
+*Linux soon.*
 
 ### From source
 
 1. Clone the repository:
    ```bash
-   git clone https://codeberg.org/cherrblyria/pymoro.git
+   git clone https://github.com/cherrblyria/pymoro.git
    cd pymoro
    ```
 
